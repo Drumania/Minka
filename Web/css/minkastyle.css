@@ -6,6 +6,7 @@
   --secundary-color: #0771bd;
   --red-color: #fd7463;
   --text-color: #333;
+  --black-color: #252422;
   --font-size: 30px;
   --font-migra: "migra";
   --font-grotesk: "RightGrotesk-Medium";
@@ -14,6 +15,8 @@
   --offset: 20vw;
   --move-initial: calc(10% + var(--offset));
   --move-final: calc(-120% + var(--offset));
+  --move-initial2: calc(-25% + var(--offset));
+  --move-final2: calc(-50% + var(--offset));
   --bg-color: rgb(241, 239, 227);
   --bg-gradient: linear-gradient(
     0deg,
@@ -29,6 +32,7 @@ html {
   box-sizing: border-box;
   font-size: var(--font-size);
   font-family: var(--font-normal);
+  overflow-x: hidden;
 }
 
 *,
@@ -63,6 +67,7 @@ img {
 body {
   background: var(--bg-color);
   background: var(--bg-gradient);
+  overflow-x: hidden;
 }
 
 h2 {
@@ -145,6 +150,13 @@ header {
   font-size: 12px;
 }
 
+/* works */
+
+#works a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 #works p {
   padding: 0 0 0 200px;
   font-weight: 400;
@@ -160,14 +172,223 @@ header {
   top: 5px;
 }
 
+#works .img-work {
+  filter: saturate(0);
+  transition: all 0.1s;
+}
+
+#works a:hover .img-work {
+  filter: saturate(1);
+  transition: all 0.1s;
+}
+
+/* big-logo */
+#big-logo {
+  background: transparent url("../img/fightingagainstuglyness.png") no-repeat
+    center center/contain;
+}
+
+#big-logo .content {
+  height: 85vh;
+
+  background-position: top 10px left 10px, top 10px right 10px,
+    bottom 10px right 10px, bottom 10px left 10px;
+
+  background-size: 40px;
+  background-repeat: no-repeat;
+
+  background-image: url("../img/RegMark.svg"), url("../img/RegMark.svg"),
+    url("../img/RegMark.svg"), url("../img/RegMark.svg");
+}
+
+#big-logo img:nth-child(1) {
+  width: 296px;
+}
+
+#big-logo img:nth-child(2) {
+  width: 932px;
+  padding: 40px 0;
+}
+
+#big-logo .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 200px;
+}
+
+#big-logo .content p {
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 27px;
+
+  /* or 105% */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+#big-logo .content span {
+  display: block;
+  font-size: 15px;
+  line-height: 15px;
+  padding-top: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* brand */
+#brand h2 {
+  padding: 0 0 15px;
+}
+
+#brand p {
+  font-family: var(--font-migra);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 40px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  color: #252422;
+}
+
+/* awards */
+#awards {
+  background: #f6ff85;
+}
+
+#awards h2 {
+  padding: 0 0 15px;
+}
+
+#awards div {
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 26px;
+  /* or 104% */
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+#awards .row div:nth-child(3),
+#awards .row div:nth-child(5) {
+  color: rgba(37, 36, 34, 0.3);
+}
+
+/* marquesina */
 .cuadraditos {
   height: 20px;
   background: transparent url("../img/Cuadritos.png") repeat-x left center;
 }
 
-#awards {
-  background: #f6ff85;
+.marquesina {
+  height: 50px;
+  background: var(--black-color);
 }
+
+.marquesina-logos {
+  height: 40px;
+  padding-top: 10px;
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial2), 0, 0);
+  animation: marquee2 10s linear infinite;
+}
+
+.marquesina-logos img {
+  width: 170px;
+  height: 30px;
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(var(--move-initial2));
+  }
+  100% {
+    transform: translateX(var(--move-final2));
+  }
+}
+
+/* footer */
+
+footer {
+  background: #ffd9d9;
+  font-family: var(--font-grotesk);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 100px 0;
+}
+
+footer form {
+  border-bottom: 1px solid;
+}
+
+footer form input[type="email"] {
+  font-family: var(--font-grotesk);
+  background: transparent;
+  font-size: 20px;
+  border: none;
+  padding: 10px 0;
+  outline: 0;
+  width: 100%;
+  color: rgb(148, 148, 148);
+}
+
+footer form input[type="submit"] {
+  font-family: var(--font-grotesk);
+  background: transparent;
+  font-size: 20px;
+  border: none;
+  font-weight: lighter;
+}
+
+footer .footer-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: block;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer .footer-links hr {
+  width: 100px;
+  background-color: var(--black-color);
+  border-color: var(--black-color);
+}
+
+footer .text-end hr {
+  width: 15px;
+  background-color: var(--black-color);
+  border-color: var(--black-color);
+}
+
+footer .text-end span {
+  display: block;
+  padding-top: 60px;
+  position: relative;
+}
+
+footer .text-end span::before {
+  content: "\268A";
+  position: absolute;
+  top: 45px;
+  right: 0;
+}
+
 @font-face {
   font-family: "migra";
   src: url("../font/Migra-Extralight.eot");
