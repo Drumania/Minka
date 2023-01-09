@@ -1,7 +1,7 @@
 /* CSS VARS & RESET */
 
 :root {
-  --gap-number: 10px;
+  --gap-number: 200px;
   --first-color: #6eceb2;
   --secundary-color: #0771bd;
   --red-color: #fd7463;
@@ -71,7 +71,7 @@ body {
 }
 
 h2 {
-  padding: 0 200px;
+  padding: 0 var(--gap-number);
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -99,7 +99,7 @@ header {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: -1px;
-  padding: 0 200px;
+  padding: 0 var(--gap-number);
 }
 
 #hero .container-fluid span {
@@ -158,7 +158,7 @@ header {
 }
 
 #works p {
-  padding: 0 0 0 200px;
+  padding: 0 0 0 var(--gap-number);
   font-weight: 400;
   font-size: 23px;
   line-height: 23px;
@@ -216,7 +216,7 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 200px;
+  padding: var(--gap-number);
 }
 
 #big-logo .content p {
@@ -414,4 +414,42 @@ footer .text-end span::before {
 }
 
 @media screen and (orientation: portrait) {
+  :root {
+    --gap-number: 20px;
+  }
+
+  .navbar-toggler {
+    font-size: 17px;
+    border: 0;
+    margin-top: 12px;
+    outline: 0 !important;
+    box-shadow: 0 !important;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler:hover,
+  .navbar-toggler:active {
+    outline: 0 !important;
+    box-shadow: 0 !important;
+  }
+
+  h3 {
+    font-size: 60px;
+    letter-spacing: -2px;
+    line-height: 60px;
+  }
+
+  #works p img {
+    left: 0px;
+  }
+
+  #works .img-work {
+    margin-top: 50px;
+  }
+
+  #brand p {
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+  }
 }
