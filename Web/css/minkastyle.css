@@ -7,6 +7,7 @@
   --red-color: #fd7463;
   --text-color: #333;
   --black-color: #252422;
+  --white-color: #ffffff;
   --font-size: 30px;
   --font-migra: "migra";
   --font-grotesk: "RightGrotesk-Medium";
@@ -157,6 +158,10 @@ header {
   color: var(--text-color);
 }
 
+#works a.hidden-works {
+  display: none;
+}
+
 #works p {
   padding: 0 0 0 var(--gap-number);
   font-weight: 400;
@@ -180,6 +185,29 @@ header {
 #works a:hover .img-work {
   filter: saturate(1);
   transition: all 0.1s;
+}
+
+#works button {
+  background-color: transparent;
+  border: 1px solid var(--black-color);
+  color: var(--black-color);
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 30px;
+  border-radius: 15px;
+  padding: 0 20px;
+  margin: 40px auto 0;
+  display: block;
+}
+
+#works button:hover {
+  background-color: var(--black-color);
+  border: 1px solid var(--black-color);
+  color: var(--white-color);
+}
+
+/* work single */
+#work-single {
 }
 
 /* big-logo */
